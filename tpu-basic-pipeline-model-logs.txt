@@ -1,0 +1,120 @@
+I0318 21:10:34.247997 140149648930688 resnet_main.py:553] Model params: {'dropblock_keep_prob': 0.9, 'transpose_input': True, 'use_async_checkpointing': False, 'dropblock_groups': '', 'poly_rate': 0.0, 'dropblock_size': 7, 'precision': 'bfloat16', 'base_learning_rate': 0.1, 'use_cache': True, 'image_size': 299, 'train_batch_size': 1024, 'weight_decay': 0.0001, 'num_train_images': 2934, 'train_steps': 28, 'use_tpu': True, 'skip_host_call': False, 'eval_batch_size': 360, 'num_cores': 8, 'data_format': 'channels_last', 'resnet_depth': 50, 'num_label_classes': 5, 'num_parallel_calls': 64, 'iterations_per_loop': 4, 'num_eval_images': 364, 'label_smoothing': 0.0, 'momentum': 0.9, 'enable_lars': False}
+I0318 21:10:34.249366 140149648930688 estimator.py:201] Using config: {'_save_checkpoints_secs': None, '_session_config': graph_options {
+  rewrite_options {
+    disable_meta_optimizer: true
+  }
+}
+cluster_def {
+  job {
+    name: "worker"
+    tasks {
+      key: 0
+      value: "10.41.141.74:8470"
+    }
+  }
+}
+, '_keep_checkpoint_max': 5, '_task_type': 'worker', '_train_distribute': None, '_is_chief': True, '_cluster_spec': <tensorflow.python.training.server_lib.ClusterSpec object at 0x7f76ed6f31d0>, '_model_dir': 'gs://resnet-tpu-colab/resnet-tpu-basic-model', '_protocol': None, '_save_checkpoints_steps': 100, '_keep_checkpoint_every_n_hours': 10000, '_service': None, '_num_ps_replicas': 0, '_tpu_config': TPUConfig(iterations_per_loop=4, num_shards=8, num_cores_per_replica=None, per_host_input_for_training=3, tpu_job_name=None, initial_infeed_sleep_secs=None, input_partition_dims=None), '_tf_random_seed': None, '_save_summary_steps': 100, '_device_fn': None, '_cluster': <tensorflow.python.distribute.cluster_resolver.tpu_cluster_resolver.TPUClusterResolver object at 0x7f76ed76cf50>, '_experimental_distribute': None, '_num_worker_replicas': 1, '_task_id': 0, '_log_step_count_steps': None, '_evaluation_master': 'grpc://10.41.141.74:8470', '_eval_distribute': None, '_global_id_in_cluster': 0, '_master': 'grpc://10.41.141.74:8470'}
+I0318 21:10:34.250087 140149648930688 tpu_context.py:202] _TPUContext: eval_on_tpu True
+I0318 21:10:34.250422 140149648930688 resnet_main.py:607] Precision: bfloat16
+I0318 21:10:34.250528 140149648930688 resnet_main.py:626] Using dataset: gs://resnet-tpu-colab/data
+I0318 21:10:34.447110 140149648930688 resnet_main.py:703] Training for 28 steps (14.00 epochs in total). Current step 0.
+W0318 21:10:34.447451 140149648930688 tpu_profiler_hook.py:73] Profiling single TPU pointed by grpc://10.41.141.74:8470. Use tpu name to profile a pod.
+I0318 21:10:34.448251 140149648930688 tpu_system_metadata.py:59] Querying Tensorflow master (grpc://10.41.141.74:8470) for TPU system metadata.
+2019-03-18 21:10:34.449499: W tensorflow/core/distributed_runtime/rpc/grpc_session.cc:354] GrpcSession::ListDevices will initialize the session with an empty graph and other defaults because the session has not yet been created.
+I0318 21:10:34.466408 140149648930688 tpu_system_metadata.py:120] Found TPU system:
+I0318 21:10:34.466685 140149648930688 tpu_system_metadata.py:121] *** Num TPU Cores: 8
+I0318 21:10:34.467160 140149648930688 tpu_system_metadata.py:122] *** Num TPU Workers: 1
+I0318 21:10:34.467267 140149648930688 tpu_system_metadata.py:124] *** Num TPU Cores Per Worker: 8
+I0318 21:10:34.467346 140149648930688 tpu_system_metadata.py:126] *** Available Device: _DeviceAttributes(/job:worker/replica:0/task:0/device:CPU:0, CPU, -1, 8936217553337695259)
+I0318 21:10:34.467643 140149648930688 tpu_system_metadata.py:126] *** Available Device: _DeviceAttributes(/job:worker/replica:0/task:0/device:XLA_CPU:0, XLA_CPU, 17179869184, 5651422969125978650)
+I0318 21:10:34.467731 140149648930688 tpu_system_metadata.py:126] *** Available Device: _DeviceAttributes(/job:worker/replica:0/task:0/device:TPU:0, TPU, 17179869184, 7384755091011198699)
+I0318 21:10:34.467834 140149648930688 tpu_system_metadata.py:126] *** Available Device: _DeviceAttributes(/job:worker/replica:0/task:0/device:TPU:1, TPU, 17179869184, 6094632692146927019)
+I0318 21:10:34.467911 140149648930688 tpu_system_metadata.py:126] *** Available Device: _DeviceAttributes(/job:worker/replica:0/task:0/device:TPU:2, TPU, 17179869184, 18189003552561023274)
+I0318 21:10:34.467994 140149648930688 tpu_system_metadata.py:126] *** Available Device: _DeviceAttributes(/job:worker/replica:0/task:0/device:TPU:3, TPU, 17179869184, 3807386500744629876)
+I0318 21:10:34.468075 140149648930688 tpu_system_metadata.py:126] *** Available Device: _DeviceAttributes(/job:worker/replica:0/task:0/device:TPU:4, TPU, 17179869184, 16093253458534027239)
+I0318 21:10:34.468151 140149648930688 tpu_system_metadata.py:126] *** Available Device: _DeviceAttributes(/job:worker/replica:0/task:0/device:TPU:5, TPU, 17179869184, 14047428442230755390)
+I0318 21:10:34.468226 140149648930688 tpu_system_metadata.py:126] *** Available Device: _DeviceAttributes(/job:worker/replica:0/task:0/device:TPU:6, TPU, 17179869184, 10958133231986700535)
+I0318 21:10:34.468303 140149648930688 tpu_system_metadata.py:126] *** Available Device: _DeviceAttributes(/job:worker/replica:0/task:0/device:TPU:7, TPU, 17179869184, 12353561892975659250)
+I0318 21:10:34.468380 140149648930688 tpu_system_metadata.py:126] *** Available Device: _DeviceAttributes(/job:worker/replica:0/task:0/device:TPU_SYSTEM:0, TPU_SYSTEM, 17179869184, 13051649511322538514)
+W0318 21:10:34.473001 140149648930688 deprecation.py:323] From /usr/local/lib/python2.7/dist-packages/tensorflow/python/ops/resource_variable_ops.py:435: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+I0318 21:10:34.484994 140149648930688 estimator.py:1111] Calling model_fn.
+W0318 21:10:34.550529 140149648930688 deprecation.py:323] From /content/drive/My Drive/ResnetTPU/tpu/models/official/resnet/resnet_preprocessing.py:66: sample_distorted_bounding_box (from tensorflow.python.ops.image_ops_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+`seed2` arg is deprecated.Use sample_distorted_bounding_box_v2 instead.
+W0318 21:10:34.729186 140149648930688 deprecation.py:323] From /content/drive/My Drive/ResnetTPU/tpu/models/official/resnet/resnet_model.py:207: conv2d (from tensorflow.python.layers.convolutional) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.conv2d instead.
+W0318 21:10:34.745969 140149648930688 deprecation.py:323] From /content/drive/My Drive/ResnetTPU/tpu/models/official/resnet/resnet_model.py:66: batch_normalization (from tensorflow.python.layers.normalization) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.batch_normalization instead.
+W0318 21:10:34.790357 140149648930688 deprecation.py:323] From /content/drive/My Drive/ResnetTPU/tpu/models/official/resnet/resnet_model.py:409: max_pooling2d (from tensorflow.python.layers.pooling) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.max_pooling2d instead.
+W0318 21:10:38.513494 140149648930688 deprecation.py:323] From /content/drive/My Drive/ResnetTPU/tpu/models/official/resnet/resnet_model.py:438: average_pooling2d (from tensorflow.python.layers.pooling) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.average_pooling2d instead.
+W0318 21:10:38.518174 140149648930688 deprecation.py:323] From /content/drive/My Drive/ResnetTPU/tpu/models/official/resnet/resnet_model.py:445: dense (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.dense instead.
+W0318 21:10:38.578417 140149648930688 deprecation.py:323] From /usr/local/lib/python2.7/dist-packages/tensorflow/python/ops/losses/losses_impl.py:209: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+I0318 21:10:39.543073 140149648930688 basic_session_run_hooks.py:527] Create CheckpointSaverHook.
+I0318 21:10:39.819752 140149648930688 estimator.py:1113] Done calling model_fn.
+I0318 21:10:41.631695 140149648930688 tpu_estimator.py:447] TPU job name worker
+I0318 21:10:42.511070 140149648930688 monitored_session.py:222] Graph was finalized.
+W0318 21:10:43.460690 140149648930688 deprecation.py:323] From /usr/local/lib/python2.7/dist-packages/tensorflow/python/training/saver.py:1266: checkpoint_exists (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to check for files with this prefix.
+I0318 21:10:43.549212 140149648930688 saver.py:1270] Restoring parameters from gs://cloud-tpu-artifacts/resnet/resnet-nhwc-2018-02-07/model.ckpt-112603
+I0318 21:10:43.983184 140149648930688 session_manager.py:491] Running local_init_op.
+I0318 21:10:44.031548 140149648930688 session_manager.py:493] Done running local_init_op.
+I0318 21:10:47.861803 140149648930688 basic_session_run_hooks.py:594] Saving checkpoints for 112603 into gs://resnet-tpu-colab/resnet-tpu-basic-model/model.ckpt.
+I0318 21:10:55.376245 140149648930688 util.py:51] Initialized dataset iterators in 0 seconds
+I0318 21:10:55.377069 140149648930688 session_support.py:345] Installing graceful shutdown hook.
+2019-03-18 21:10:55.377473: W tensorflow/core/distributed_runtime/rpc/grpc_session.cc:354] GrpcSession::ListDevices will initialize the session with an empty graph and other defaults because the session has not yet been created.
+I0318 21:10:55.384644 140149648930688 session_support.py:102] Creating heartbeat manager for ['/job:worker/replica:0/task:0/device:CPU:0']
+I0318 21:10:55.403243 140149648930688 session_support.py:130] Configuring worker heartbeat: shutdown_mode: WAIT_FOR_COORDINATOR
+
+I0318 21:10:55.407421 140149648930688 tpu_estimator.py:504] Init TPU system
+I0318 21:11:02.700190 140149648930688 tpu_estimator.py:510] Initialized TPU in 7 seconds
+I0318 21:11:03.255672 140148623202048 tpu_estimator.py:463] Starting infeed thread controller.
+I0318 21:11:03.256632 140148614809344 tpu_estimator.py:482] Starting outfeed thread controller.
+I0318 21:11:03.317725 140149648930688 tpu_estimator.py:536] Enqueue next (4) batch(es) of data to infeed.
+I0318 21:11:03.318535 140149648930688 tpu_estimator.py:540] Dequeue next (4) batch(es) of data from outfeed.
+I0318 21:13:43.382538 140149648930688 basic_session_run_hooks.py:249] loss = 1.5698441, step = 112607
+I0318 21:13:43.386127 140149648930688 tpu_estimator.py:536] Enqueue next (4) batch(es) of data to infeed.
+I0318 21:13:43.386506 140149648930688 tpu_estimator.py:540] Dequeue next (4) batch(es) of data from outfeed.
+I0318 21:13:53.670531 140149648930688 tpu_profiler_hook.py:119] Saving profile at step 112611 with command ['/usr/local/bin/capture_tpu_profile', '--duration_ms=60000', '--service_addr=10.41.141.74:8470', '--workers_list=10.41.141.74', '--logdir=gs://resnet-tpu-colab/resnet-tpu-basic-model']
+I0318 21:13:53.694089 140149648930688 tpu_estimator.py:536] Enqueue next (4) batch(es) of data to infeed.
+I0318 21:13:53.694622 140149648930688 tpu_estimator.py:540] Dequeue next (4) batch(es) of data from outfeed.
+TensorFlow version 1.13.1 detected
+Welcome to the Cloud TPU Profiler v1.13.0
+Starting to profile TPU traces for 60000 ms. Remaining attempt(s): 3
+I0318 21:14:04.642352 140149648930688 tpu_estimator.py:536] Enqueue next (4) batch(es) of data to infeed.
+I0318 21:14:04.642679 140149648930688 tpu_estimator.py:540] Dequeue next (4) batch(es) of data from outfeed.
+I0318 21:14:15.636100 140149648930688 tpu_profiler_hook.py:115] Profiler is already running, skipping collection at step 112619
+I0318 21:14:15.643843 140149648930688 tpu_estimator.py:536] Enqueue next (4) batch(es) of data to infeed.
+I0318 21:14:15.644191 140149648930688 tpu_estimator.py:540] Dequeue next (4) batch(es) of data from outfeed.
+I0318 21:14:26.946217 140149648930688 tpu_estimator.py:536] Enqueue next (4) batch(es) of data to infeed.
+I0318 21:14:26.947645 140149648930688 tpu_estimator.py:540] Dequeue next (4) batch(es) of data from outfeed.
+I0318 21:14:38.599294 140149648930688 tpu_profiler_hook.py:115] Profiler is already running, skipping collection at step 112627
+I0318 21:14:38.605830 140149648930688 tpu_estimator.py:536] Enqueue next (4) batch(es) of data to infeed.
+I0318 21:14:38.606214 140149648930688 tpu_estimator.py:540] Dequeue next (4) batch(es) of data from outfeed.
+I0318 21:14:49.770201 140149648930688 basic_session_run_hooks.py:594] Saving checkpoints for 112631 into gs://resnet-tpu-colab/resnet-tpu-basic-model/model.ckpt.
+I0318 21:14:58.427670 140149648930688 tpu_estimator.py:545] Stop infeed thread controller
+I0318 21:14:58.428035 140149648930688 tpu_estimator.py:392] Shutting down InfeedController thread.
+I0318 21:14:58.428307 140148623202048 tpu_estimator.py:387] InfeedController received shutdown signal, stopping.
+I0318 21:14:58.428432 140148623202048 tpu_estimator.py:479] Infeed thread finished, shutting down.
+I0318 21:14:58.428630 140149648930688 error_handling.py:93] infeed marked as finished
+I0318 21:14:58.428806 140149648930688 tpu_estimator.py:549] Stop output thread controller
+I0318 21:14:58.428894 140149648930688 tpu_estimator.py:392] Shutting down OutfeedController thread.
+I0318 21:14:58.429044 140148614809344 tpu_estimator.py:387] OutfeedController received shutdown signal, stopping.
+I0318 21:14:58.429157 140148614809344 tpu_estimator.py:488] Outfeed thread finished, shutting down.
+I0318 21:14:58.429335 140149648930688 error_handling.py:93] outfeed marked as finished
+I0318 21:14:58.429476 140149648930688 tpu_estimator.py:553] Shutdown TPU system.
+I0318 21:14:59.672938 140149648930688 estimator.py:359] Loss for final step: 1.0365983.
+I0318 21:14:59.673713 140149648930688 error_handling.py:93] training_loop marked as finished
+Profile session succeed for host(s):10.41.141.74
