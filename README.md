@@ -145,7 +145,7 @@ tensorboard --logdir tensorboard-trained-tpu-model-basic-pipeline
 4. Then run this cmd to see much better optimised results wherein TPU is churning data most of the time and CPU is running and delivering perfectly for TPU speeds. The tensorboard TPU profiler also states the same only `0.5%` of time is spent in waiting for input from CPU, massive improvement from previous `95%` time yeah!!
 
 
-```python
+```
 tensorboard --logdir tensorboard-trained-tpu-model-optimized-pipeline
 ```
 
@@ -153,7 +153,7 @@ tensorboard --logdir tensorboard-trained-tpu-model-optimized-pipeline
 ![Alt text](tpu-optimised-input-pipeline.png?raw=true)
 > In this case since we only have like 2900 images for training, the TPU utilization will be around 6% and won't shoot that much, to see impressive 60% TPU MXU utilization, run this cmd 
 
-```python
+```
 tensorboard --logdir tensorboard-TPU-Resnet-1million-Images-At-Scale
 ```
 
