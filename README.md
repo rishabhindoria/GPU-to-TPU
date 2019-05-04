@@ -135,7 +135,7 @@ TPU = 'grpc://' + os.environ['COLAB_TPU_ADDR']
 
 
 ```python
-tensorboard --logdir tensorboard-trained-tpu-model-basic-pipeline
+`tensorboard --logdir tensorboard-trained-tpu-model-basic-pipeline`
 ```
 
 *  Jump on to http://localhost:6006 to see effects of bad input pipeline resulting in lower TPU MXU utilization and have the TPU waiting for data from CPU as CPU is busy for `95%` of the time preparing data for the TPU
