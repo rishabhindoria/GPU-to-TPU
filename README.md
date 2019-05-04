@@ -134,8 +134,8 @@ TPU = 'grpc://' + os.environ['COLAB_TPU_ADDR']
 > * tensorboard-TPU-Resnet-1million-Images-At-Scale: https://drive.google.com/file/d/1Xs8PcbOpdW44xbSFQW1bLRUOnWhBb6A1/view?usp=sharing
 
 
-```python
-`tensorboard --logdir tensorboard-trained-tpu-model-basic-pipeline`
+```
+tensorboard --logdir tensorboard-trained-tpu-model-basic-pipeline
 ```
 
 *  Jump on to http://localhost:6006 to see effects of bad input pipeline resulting in lower TPU MXU utilization and have the TPU waiting for data from CPU as CPU is busy for `95%` of the time preparing data for the TPU
